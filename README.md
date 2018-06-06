@@ -17,6 +17,7 @@ make
 ./tracker   
 ```
 use mouse to select an area to track and press enter.
+
 press "q" to quit.
 
 
