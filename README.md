@@ -8,6 +8,7 @@ This example is used to test opencv contrib trackers.
 * cmake and make tools
 
 # How to run
+First checkout then:
 ```
 mkdir build
 cd build
