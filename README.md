@@ -16,8 +16,17 @@ cmake ..
 make 
 ./tracker  1
 ```
-use mouse to select an area to track and press enter.
+use mouse to select ROI to track and press enter. Press 'c' will try another frame without selecting ROI.
 
 press "q" to quit.
 
+# Note for GOTURN
+When choose GOTURN as
+```
+./track 6
+```
+It will need goturn.prototxt and goturn.caffemodel files to initialize internal NN.
 
+You can train by yourself or download one form https://github.com/Mogball/goturn-files
+
+and put these files with executable.
