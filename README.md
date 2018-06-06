@@ -14,7 +14,7 @@ mkdir build
 cd build
 cmake ..
 make 
-./tracker   
+./tracker  1
 ```
 use mouse to select an area to track and press enter.
 
