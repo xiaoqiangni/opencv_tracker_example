@@ -110,13 +110,17 @@ ROI:
 	cout<< "Could not init tracker!" <<endl;
 	return -1;
     } 
-	 
+	
+    float avg_fps = 0.0;
+	
     while(video.read(frame))
     {     
         double timer = (double)getTickCount();
         bool up = tracker->update(frame, bbox);
         float fps = getTickFrequency() / ((double)getTickCount() - timer);
-         
+        if(avg_fps==0.0)avg_fps = fps;
+	else avg_fps = (avg_fps + fps)/2.0;
+	    
         if (up)
         {
             rectangle(frame, bbox, Scalar( 255, 0, 0 ), 2, 1 );
@@ -140,6 +144,7 @@ ROI:
  
     }
 
+    printf("Average FPS: %.3f\r\n", avg_fps);
     video.release();
     destroyAllWindows();
 }
